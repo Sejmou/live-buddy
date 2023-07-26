@@ -55,7 +55,7 @@ In my implementation, both the server and client use TypeScript. The server will
 Here I break down the different features I want to implement into smaller, concrete programming tasks.
 
 - [x] Setup server and client webapp with PNPM workspaces (no communication between them yet)
-- [ ] Setup basic socket.io connection between server and webapp
+- [ ] Setup basic socket.io connection between server and webapp (no proper API yet)
 - [ ] Setup socket communication between server and client using shared API types
 - [ ] Configure Ableton.js on server, control play/pause from webapp via socket connection to server
 - [ ] Add Tailwind to Svelte App ([this](https://github.com/svelte-add/tailwindcss) way?)
