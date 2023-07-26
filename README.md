@@ -55,11 +55,15 @@ In my implementation, both the server and client use TypeScript. The server will
 Here I break down the different features I want to implement into smaller, concrete programming tasks.
 
 - [x] Setup server and client webapp with PNPM workspaces (no communication between them yet)
-- [ ] Setup basic socket.io connection between server and webapp (no proper API yet)
+- [x] Setup basic socket.io connection between server and webapp (no proper API yet)
 - [ ] Setup socket communication between server and client using shared API types
 - [ ] Configure Ableton.js on server, control play/pause from webapp via socket connection to server
 - [ ] Add Tailwind to Svelte App ([this](https://github.com/svelte-add/tailwindcss) way?)
 
+### Known bugs
+
+#### Low priority
+ - [ ] When saving changes to the `socket.ts` file in the webapp (which triggers hot reload), for some reason previous socket connections aren't closed. The app only receives messages emitted by the server once (which is good). However, the previous connections don't disconnect, hence the server emits events to them as well. A full browser refresh immediately solves the issue though.
 
 ### Running the project in development mode
 Client webapp:

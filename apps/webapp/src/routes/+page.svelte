@@ -1,2 +1,8 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import SocketState from '$lib/components/SocketState.svelte';
+	import SocketMessageLog from '$lib/components/SocketMessageLog.svelte';
+</script>
+
+<h1>Welcome to the Client App</h1>
+<SocketState />
+<SocketMessageLog />
