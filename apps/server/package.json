@@ -22,7 +22,7 @@
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4",
-    "api-types": "workspace:*"
+    "api": "workspace:*"
   },
   "scripts": {
     "start": "node dist/index.js",

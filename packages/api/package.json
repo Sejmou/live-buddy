@@ -1,5 +1,5 @@
 {
-  "name": "api-types",
+  "name": "api",
   "version": "0.0.1",
   "description": "Types for the WebSocket client and server APIs. This is an internal package (see also: https://turbo.build/blog/you-might-not-need-typescript-project-references#internal-typescript-packages)",
   "main": "index.ts",

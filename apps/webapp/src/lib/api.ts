@@ -1,5 +1,5 @@
-import type { ClientActions } from 'api-types';
-import { emitClientAction } from 'api-types';
+import type { ClientActions } from 'api';
+import { emitClientAction } from 'api';
 import { type Socket, io } from 'socket.io-client';
 import { browser } from '$app/environment';
 

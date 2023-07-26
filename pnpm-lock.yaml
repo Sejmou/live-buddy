@@ -33,9 +33,9 @@ importers:
       '@types/node':
         specifier: ^20.2.5
         version: 20.4.5
-      api-types:
+      api:
         specifier: workspace:*
-        version: link:../../packages/api-types
+        version: link:../../packages/api
       nodemon:
         specifier: ^2.0.22
         version: 2.0.22
@@ -48,6 +48,9 @@ importers:
 
   apps/webapp:
     dependencies:
+      api:
+        specifier: workspace:*
+        version: link:../../packages/api
       socket.io-client:
         specifier: ^4.7.1
         version: 4.7.1
@@ -101,7 +104,7 @@ importers:
         specifier: ^0.32.2
         version: 0.32.4
 
-  packages/api-types:
+  packages/api:
     dependencies:
       socket.io:
         specifier: '*'
