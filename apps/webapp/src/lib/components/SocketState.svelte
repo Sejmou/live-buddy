@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { state } from '$lib/socket';
+	import { state } from '$lib/socket-log';
 </script>
 
 <div>

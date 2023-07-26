@@ -1,6 +1,7 @@
 import express from 'express';
 import { createServer } from 'http';
 import { Server as SocketServer } from 'socket.io';
+import { setupServerActionHandlers } from 'api-types';
 
 const app = express();
 
@@ -18,6 +19,15 @@ app.get('/', (req, res) => {
 io.on('connection', socket => {
   console.log('a user connected');
   console.log('current number of connections:', io.engine.clientsCount);
+
+  setupServerActionHandlers(socket, {
+    startPlayback: () => {
+      // TODO: implement this
+    },
+    stopPlayback: () => {
+      // TODO: implement this
+    },
+  });
 
   socket.on('disconnect', () => {
     console.log('a user disconnected');

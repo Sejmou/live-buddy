@@ -1,21 +1,7 @@
-import socketioSocket from 'socket.io-client';
 import { readable } from 'svelte/store';
-import { browser } from '$app/environment';
+import { socket } from './api';
 
 type SocketState = 'connected' | 'disconnected' | 'initializing';
-
-function createSocket() {
-	console.log('initializing socket...');
-	const socket = socketioSocket('http://localhost:3000');
-
-	socket.on('serverhi', (data) => {
-		console.log('server said hi:', data);
-	});
-
-	return socket;
-}
-
-export const socket = browser ? createSocket() : null; // only the client should ever connect to the socket server!
 
 // Subscribe to this store in components (using $state) to get the current state of the socket
 export const state = readable<SocketState>('initializing', (set) => {

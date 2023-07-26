@@ -6,7 +6,17 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    dependencies:
+      socket.io:
+        specifier: ^4.7.1
+        version: 4.7.1
+      socket.io-client:
+        specifier: ^4.7.1
+        version: 4.7.1
+      typescript:
+        specifier: ^5.1.6
+        version: 5.1.6
 
   apps/server:
     dependencies:
@@ -23,6 +33,9 @@ importers:
       '@types/node':
         specifier: ^20.2.5
         version: 20.4.5
+      api-types:
+        specifier: workspace:*
+        version: link:../../packages/api-types
       nodemon:
         specifier: ^2.0.22
         version: 2.0.22
@@ -87,6 +100,19 @@ importers:
       vitest:
         specifier: ^0.32.2
         version: 0.32.4
+
+  packages/api-types:
+    dependencies:
+      socket.io:
+        specifier: '*'
+        version: 4.7.1
+      socket.io-client:
+        specifier: '*'
+        version: 4.7.1
+    devDependencies:
+      typescript:
+        specifier: '*'
+        version: 5.1.6
 
 packages:
 
@@ -2845,7 +2871,6 @@ packages:
     resolution: {integrity: sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
   /ufo@1.1.2:
     resolution: {integrity: sha512-TrY6DsjTQQgyS3E3dBaOXf0TpPD8u9FVrVYmKVegJuFw51n/YB9XPt+U6ydzFG5ZIN7+DIjPbNmXoBj9esYhgQ==}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { message, type ServerMessage } from '$lib/socket';
+	import { message, type ServerMessage } from '$lib/socket-log';
 	import { derived, type Readable } from 'svelte/store';
 
 	// TODO: figure out if the is a smarter way to store the last 10 messages and update the UI accordingly
