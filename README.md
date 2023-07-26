@@ -57,10 +57,14 @@ Here I break down the different features I want to implement into smaller, concr
 - [ ] Setup server and client with PNPM workspaces
 - [ ] Setup socket.io connection between server and client using shared API types
 - [ ] Configure basic playback
+- [ ] Add Tailwind to Svelte App ([this](https://github.com/svelte-add/tailwindcss) way?)
 
 
-### Running the project
-TODO: Add notes on how to run the project locally
+### Running the project in development mode
+Client webapp:
+```bash
+pnpm run --filter webapp dev
+```
 
 ### Building the project
 TODO: Add notes on how to build the project
