@@ -1,30 +1,24 @@
-import { Socket as ClientSocket } from 'socket.io-client';
-import { Socket as ServerSocket } from 'socket.io';
+export type ClientAction =
+  | 'startPlayback'
+  | 'continuePlayback'
+  | 'stopPlayback';
 
-export interface ClientAction {
-  name: ClientActionNames;
-}
-
-export type ClientActions = {
-  startPlayback: () => void;
-  stopPlayback: () => void;
+export type ClientAPI = {
+  [K in ClientAction]: () => void;
 };
 
-export type ClientActionNames = keyof ClientActions;
+export type ClientActionHandlers = ClientAPI;
 
-export const emitClientAction: (
-  socket: ClientSocket,
-  command: ClientAction
-) => void = (socket, action) => {
-  socket.emit('clientAction', action);
+// be sure to keep this up-to-date with the keys in LiveSetState!
+// TODO: figure out if there is a smarter way to do this that would not required manual work at all
+export const liveSetStateProps: Readonly<Array<keyof LiveSetState>> = [
+  'isPlaying',
+] as const;
+
+export type LiveSetState = {
+  isPlaying: boolean;
 };
 
-export const setupServerActionHandlers = (
-  socket: ServerSocket,
-  handlers: ClientActions
-) => {
-  socket.on('clientAction', (action: ClientAction) => {
-    console.log('Received client action:', action);
-    handlers[action.name]();
-  });
+export type UpdateHandlers = {
+  [K in keyof LiveSetState]: (update: LiveSetState[K]) => void;
 };
